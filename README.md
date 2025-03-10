@@ -41,6 +41,14 @@ npm run generate-sdk
 npm run dev
 ```
 
+## Running on Replit
+
+1. Click the "Use Template" button on Replit
+2. Once the Repl is created, go to the "Secrets" tab in the Tools panel
+3. Add all the required environment variables listed in `.env.example`
+4. The Repl will automatically install dependencies and start the development server
+5. Click the "Run" button to start the application
+
 ## Project Structure
 
 - `/src/app` - Next.js App Router pages and API routes
