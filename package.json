@@ -1,0 +1,36 @@
+{
+  "name": "rightbrain-next-template",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "generate-sdk": "rightbrain generate"
+  },
+  "dependencies": {
+    "@rightbrain/cli": "^0.0.8",
+    "@rightbrain/sdk": "^0.0.8",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.479.0",
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "simple-oauth2": "^5.1.0",
+    "tailwind-merge": "^3.0.2",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.0.12",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "@types/simple-oauth2": "^5.0.7",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^4.0.12",
+    "typescript": "latest"
+  }
+}
