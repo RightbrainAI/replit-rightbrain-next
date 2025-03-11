@@ -1,19 +1,30 @@
+# Commands to run on startup
 run = ["sh", "-c", "npm run generate-sdk && npm run dev"]
-entrypoint = "index.js"
-modules = ["nodejs-20:v9-20231020-a3526c9"]
-hidden = [".config", "package-lock.json", ".next", ".swc"]
 
+# Main entry point
+entrypoint = "index.js"
+
+# Node.js version specification
+modules = ["nodejs-20:v9-20231020-a3526c9"]
+
+# Files to hide in the Replit UI
+hidden = [".config", "pnpm-lock.yaml", ".next", ".swc"]
+
+# Nix configuration
 [nix]
 channel = "stable-23_05"
 
+# Environment variables
 [env]
 NEXT_TELEMETRY_DISABLED = "1"
 
+# Deployment configuration
 [deployment]
 build = ["sh", "-c", "npm run generate-sdk && npm run build"]
 run = ["npm", "run", "start"]
 deploymentTarget = "cloudrun"
 
+# Port configuration
 [[ports]]
 localPort = 3000
 externalPort = 80

@@ -1,17 +1,26 @@
 "use client";
 
+import { Output_profile_image_verification } from "@/generated";
+import { isProfileImageVerificationOutput } from "@/types";
+// Component for analyzing profile pictures using Rightbrain AI
+// Handles file upload, API communication, and result display
+
 import { useState } from "react";
 
 export function ProfileAnalyzer() {
+  // State management for file upload and analysis
   const [file, setFile] = useState<File | null>(null);
-  const [result, setResult] = useState<any>(null);
+  const [result, setResult] =
+    useState<Output_profile_image_verification | null>(null);
   const [loading, setLoading] = useState(false);
 
+  // Handle form submission and API communication
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!file) return;
 
     setLoading(true);
+    setResult(null);
     try {
       const formData = new FormData();
       formData.append("image", file);
@@ -22,7 +31,12 @@ export function ProfileAnalyzer() {
       });
 
       const data = await response.json();
-      setResult(data);
+
+      if (isProfileImageVerificationOutput(data)) {
+        setResult(data);
+      } else {
+        console.error("Invalid response format:", data);
+      }
     } catch (error) {
       console.error("Error:", error);
     } finally {
